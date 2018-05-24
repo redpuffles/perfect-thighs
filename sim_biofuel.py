@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 """
 
 Created on --23/05/18--
 
 @authors: -- Roger Wu, Rex-Xue Lin --
 
-Purpose: This file defines the function 'sim_biofuel' which aims to simulate
+Purpose: This file defines the function 'sim_biofuel', which aims to simulate
          the biofuel model.
 
 Inputs:
@@ -38,7 +39,6 @@ import numpy as np
 
 def sim_biofuel(data_set_to_use, time_array, init_bacteria_amount, alpha_b,
                 alpha_p):
-
     # BEGIN - DO NOT REMOVE ---------------------------------------------------
     # Note: Please do not remove this
     sys_para = bsps.biofuel_system_parameter_sets(data_set_to_use)
