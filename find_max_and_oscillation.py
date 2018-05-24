@@ -33,7 +33,7 @@ def find_max_and_oscillation(input_array):
     max_biofuel_int = np.max(input_array)
 
     # Find index of the first instance of this maximum value.
-    first_max_index = int(np.where(input_array == max_biofuel_int)[0])
+    first_max_index = int(np.where(input_array == max_biofuel_int)[0][0])
 
     # If this is the last index in the array, oscillation size is 0.
     if (first_max_index == (np.size(input_array) - 1)):
