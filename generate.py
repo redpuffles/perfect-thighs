@@ -42,8 +42,8 @@ def generate(data_set_to_use, time_array, INITIAL_BACTERIA_AMOUNT,
     for i in range(0, np.size(alpha_b_array)):
         for j in range(0, np.size(alpha_p_array)):
             array_bacteriaAmount, array_sensor, array_pump, array_biofuelInt, \
-                array_biofuelExt = sb.sim_biofuel(data_set_to_use, time_array,
-                                      INITIAL_BACTERIA_AMOUNT, i, j)
+                array_biofuelExt = (sb.sim_biofuel(data_set_to_use, time_array,
+                                    INITIAL_BACTERIA_AMOUNT, i, j))
 
             #
             max_biofuel_int, oscillation_size = \
