@@ -13,13 +13,13 @@ Purpose: This file defines the function 'find_max_and_oscillation', which
          oscillation size.
 
 Input:
-    input_array            |    {Array} An array of biofuel measures inside the
-                                bacteria.
+    input_array                |    {Array} An array of biofuel measures inside
+                               ·    the bacteria.
 
 Outputs:
-    max_biofuel_int        |    {Float/integer} Highest amount of biofuel
-                                inside bacteria.
-    oscillation_size       |    {Float/integer} Size of oscillation.
+    max_biofuel_int            |    {Float/integer} Highest amount of biofuel
+                               ·    inside bacteria.
+    oscillation_size           |    {Float/integer} Size of oscillation.
 
 """
 

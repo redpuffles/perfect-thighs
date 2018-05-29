@@ -8,13 +8,40 @@ Created on --24/05/18--
 
 @authors: -- Roger Wu, Rex-Xue Lin --
 
-Purpose: This file defines the function '-', which -.
+Purpose: This file defines the function 'generate', which -.
 
 Inputs:
-                           |    {}
+
+    data_set_to_use            |    {Integer} Set ID for system constants
+                               ·    needed for simulation.
+    time_array                 |    {Array} An array of uniformly distributed
+                               ·    time instances.
+    INITIAL_BACTERIA_AMOUNT    |    {Float/integer} The initial amount of
+                               ·    bacteria.
+    alpha_b_array              |    {Array} An array of 'alpha_b' values.
+    ALPHA_P_LOWER              |    {Float/integer} Value of which the array
+                               ·    'alpha_p_array' will start at.
+    ALPHA_P_UPPER              |    {Float/integer} Value of which the array
+                               ·    'alpha_p_array' will end at.
+    ALPHA_P_STEP               |    {Float/integer} Uniform increment between
+                               ·    values which 'alpha_p_array' will use.
 
 Outputs:
-                           |    {}
+
+    alpha_b_array              |    {Array} An array of 'alpha_b' values.
+    alpha_p_array              |    {Array} An array of 'alpha_p' values.
+    max_internal_biofuel       |    {Array} An array containing max internal
+                               ·    biofuel values calculated using each pair
+                               ·    of values between 'alpha_b_array' and
+                               ·    'alpha_b_array'.
+    oscillation_internal_      |    {Array} An array containing oscillation
+        biofuel                ·    sizes calculated using each pair of
+                               ·    values etween 'alpha_b_array' and
+                               ·    'alpha_b_array'.
+    final_external_biofuel     |    {Array} An array containing final external
+                               ·    biofuel values calculating using each pair
+                               ·    of values between 'alpha_b_array' and
+                               ·    'alpha_b_array'
 
 """
 
@@ -52,11 +79,14 @@ def generate(data_set_to_use, time_array, INITIAL_BACTERIA_AMOUNT,
             max_biofuel_int, oscillation_size = \
                 fmo.find_max_and_oscillation(array_biofuelInt)
 
-            # Define corresponding values in each output array.
+            # Define corresponding values in each output array:
+            # Maximum internal biofuel value.
             max_internal_biofuel[i, j] = max_biofuel_int
+            # Oscillation size value.
             oscillation_internal_biofuel[i, j] = oscillation_size
+            # Final external biofuel value.
             final_external_biofuel[i, j] = array_biofuelExt[-1]
 
-    #
+    # Return the five output arrays.
     return (alpha_b_array, alpha_p_array, max_internal_biofuel,
             oscillation_internal_biofuel, final_external_biofuel)

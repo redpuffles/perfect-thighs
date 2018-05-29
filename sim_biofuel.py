@@ -12,22 +12,26 @@ Purpose: This file defines the function 'sim_biofuel', which aims to simulate
          the biofuel model.
 
 Inputs:
-    data_set_to_use        |    {Integer} Set ID for system constants needed
-                                for simulation.
-    array_time             |    {Array} An array of uniformly distributed time
-                                instances.
-    init_bacteria_amount   |    {Float/integer} The initial amount of bacteria.
-    alpha_b                |    {Float/integer} Value of the parameter alpha_b
-                                which is the production rate of biofuel.
-    alpha_p                |    {Float/integer} Value of the parameter alpha_p
-                                which is the production rate of efflux pumps.
+    data_set_to_use            |    {Integer} Set ID for system constants
+                               ·    needed for simulation.
+    time_array                 |    {Array} An array of uniformly distributed
+                               ·    time instances.
+    init_bacteria_amount       |    {Float/integer} The initial amount of
+                               ·    bacteria.
+    alpha_b                    |    {Float/integer} Value of the parameter
+                               ·    alpha_b which is the production rate of
+                               ·    biofuel.
+    alpha_p                    |    {Float/integer} Value of the parameter
+                               ·    alpha_p which is the production rate of
+                               ·    efflux pumps.
 
 Outputs:
-    array_bateriaAmount    |    {Array} Amount of bacteria.
-    array_sensor           |    {Array} Sensor output.
-    array_pump             |    {Array} Number of efflux pumps.
-    array_biofuelInt       |    {Array} Amount of biofuel inside bacteria.
-    array_biofuelExt       |    {Array} Amount of biofuel outsie of bacteria.
+    array_bateriaAmount        |    {Array} Amount of bacteria.
+    array_sensor               |    {Array} Sensor output.
+    array_pump                 |    {Array} Number of efflux pumps.
+    array_biofuelInt           |    {Array} Amount of biofuel inside bacteria.
+    array_biofuelExt           |    {Array} Amount of biofuel outsie of
+                               ·    bacteria.
 
 """
 
@@ -82,7 +86,7 @@ def sim_biofuel(data_set_to_use, time_array, init_bacteria_amount, alpha_b,
     # - Amount of efflux pumps.
     # - Amount of biofuel in the interior of the bacteria.
     # - Amount of biofuel in the exterior of the bacteria.
-    # This is done using given formulae.
+    # This is done using given formulae:
     for i in range(1, np.size(time_array)):
         # Amount of bacteria.
         array_bacteriaAmount[i] = \
