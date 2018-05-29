@@ -31,7 +31,7 @@ def generate(data_set_to_use, time_array, INITIAL_BACTERIA_AMOUNT,
     alpha_p_array = np.arange(ALPHA_P_LOWER, (ALPHA_P_UPPER + ALPHA_P_STEP),
                               ALPHA_P_STEP)
 
-    # Create three output arrays of 'alpha_p_array' size with placeholder 
+    # Create three output arrays of 'alpha_p_array' size with placeholder
     # values.
     max_internal_biofuel = \
         np.zeros((np.size(alpha_b_array), np.size(alpha_p_array)))
