@@ -17,7 +17,7 @@ import generate as gn
 
 # Use the variable dataSetToUse to choose which parameter set you
 # want to use
-data_set_to_use = 1  # Either 1 or 2 
+data_set_to_use = 2  # Either 1 or 2 
 # 
 
 # PLEASE DO NOT CHANGE THIS SECTION
@@ -78,12 +78,25 @@ best_alpha_b, best_alpha_p, poor_alpha_b, poor_alpha_p = \
     
     
     
-    
-
 #
 # Print your answers, and manually check them against the expected answers, 
 # available from the link provided in the specs (see below). 
 # Answers for this part are at, https://www.cse.unsw.edu.au/~en1811/18s1/assigns/ass2/answers.html
 # You need to manually compare/check these answers.
 
-    
+# Set 1
+# poor_alpha_b = 0.088587
+# poor_alpha_p = 0.01
+# best_alpha_b = 0.069519
+# best_alpha_p = 0.04
+
+# Set 2
+# poor_alpha_b = 0.092367
+# poor_alpha_p = 0.01
+# best_alpha_b = 0.048939
+# best_alpha_p = 0.005
+
+print("poor_alpha_b:", poor_alpha_b)
+print("poor_alpha_p:", poor_alpha_p)
+print("best_alpha_b:", best_alpha_b)
+print("best_alpha_p:", best_alpha_p)

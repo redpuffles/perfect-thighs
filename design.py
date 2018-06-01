@@ -13,8 +13,9 @@ Purpose: This file defines the function 'design', which determines the best
              - Amount of biofuel that can be collected.
              - Maximum amount of internal biofuel.
              - Amount of oscillation of internal biofuel.
-         For comparison purposes, the worst pair is also stated based on the
-         same criteria.
+         For comparitive purposes, a "poor" pair is also selected without
+         consideration of the maximum amount of internal biofuel and amount
+         of oscilation of internal biofuel
 
 Inputs:
     THRESHOLD_MAX_             |    {Float/integer} Threshold on the maximum
@@ -53,7 +54,7 @@ def design(THRESHOLD_MAX_INTERNAL_FUEL,
            THRESHOLD_MAX_OSCILLATION_INTERNAL_FUEL, alpha_b_array,
            alpha_p_array, max_internal_biofuel, oscillation_internal_biofuel,
            final_external_biofuel):
-    # Finding poor.
+    # Finding poor pair.
     index = np.argmax(final_external_biofuel)
     poor_alpha_b = alpha_b_array[index // len(alpha_p_array)]
     poor_alpha_p = alpha_p_array[index % len(alpha_p_array)]
@@ -63,11 +64,10 @@ def design(THRESHOLD_MAX_INTERNAL_FUEL,
          (oscillation_internal_biofuel <
           THRESHOLD_MAX_OSCILLATION_INTERNAL_FUEL))
 
-    # Set all false values to 0.
-    # Change to negative infinity?
+    # Set all false values(not within thresholds) to 0.
     (final_external_biofuel[~c]) = 0
 
-    # Finding best.
+    # Finding best pair.
     index = np.argmax(final_external_biofuel)
     best_alpha_b = alpha_b_array[index // len(alpha_p_array)]
     best_alpha_p = alpha_p_array[index % len(alpha_p_array)]
